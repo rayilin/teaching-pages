@@ -31,7 +31,7 @@ jobs:
         run: |
           set -e
           mkdir -p _site
-          cp -r units/. _site/
+          cp -r units _site/units
           cp index.html _site/index.html
           find _site -type f \( -name 'server.js' -o -name 'questions.json' \
             -o -name '*.bat' -o -name 'battle-api.js.example' \) -delete
