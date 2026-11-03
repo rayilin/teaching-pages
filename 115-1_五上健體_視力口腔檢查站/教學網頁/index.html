@@ -285,7 +285,7 @@
   <div class="wrap">
     <div class="eyebrow">康軒版・健康與體育・五年級上學期・單元一第 2 課</div>
     <h1>視力口腔檢查站</h1>
-    <p class="lead">眼睛和牙齒是一輩子的健康存款。兩節課的完整教學資源：教案、21 頁簡報、10 題互動測驗、抽籤與計時器，以及最下方兩人一室的視力口腔對戰。</p>
+    <p class="lead">眼睛和牙齒是一輩子的健康存款。兩節課的完整教學資源：教案、21 頁簡報（4 段旁白動畫）、10 題互動測驗、抽籤與計時器，以及最下方兩人一室的視力口腔對戰。</p>
     <div class="chips">
       <span class="chip g">3010120</span><span class="chip g">貝氏刷牙</span>
       <span class="chip o">牙線 C 字形</span><span class="chip o">高度近視</span><span class="chip o">牙周病</span>
@@ -407,13 +407,14 @@
       <div>
         <div class="kicker">SLIDES · 21 PAGES</div>
         <h2>教學簡報</h2>
-        <p>用左右鍵或下方縮圖換頁。21 頁靜態投影片，插畫為 AI 自製素材；重點頁直接投影，配合口訣帶學生朗讀。</p>
+        <p>用左右鍵或下方縮圖換頁。第 6、7、11、12 頁是含旁白的動畫（約 15 秒），點播放即可；其餘為靜態圖解。</p>
       </div>
       <a class="btn ghost small" href="downloads/視力口腔檢查站_教學簡報.pptx" download>下載 PowerPoint</a>
     </div>
 
     <div class="deck-shell">
       <div class="stage" id="stage">
+        <div class="badge-sound">🔊 含旁白</div>
         <img id="slideImg" src="slides/slide01.jpg" alt="簡報第 1 頁" />
         <video id="slideVideo" controls preload="none" playsinline></video>
       </div>
@@ -425,7 +426,7 @@
         <button class="btn ghost small" id="fsBtn">全螢幕</button>
       </div>
       <div class="thumbs" id="thumbs"></div>
-      <div class="hint">提示：投影片以 16:9 製作；按 F11 或「全螢幕」可投影。本版為無旁白版，由老師照每頁重點講解。</div>
+      <div class="hint">提示：投影片以 16:9 製作；按 F11 或「全螢幕」可投影。動畫頁有旁白，建議先試播確認音量。</div>
     </div>
   </div>
 </section>
@@ -578,7 +579,7 @@
 <footer>
   <div class="wrap">
     <div><b>視力口腔檢查站</b>｜康軒版五上健體・教學專欄</div>
-    <div>教案 Word ・ 簡報 21 頁 ・ 5 部參考影片 ・ 10 題測驗</div>
+    <div>教案 Word ・ 簡報 21 頁＋4 段旁白動畫 ・ 5 部參考影片 ・ 10 題測驗</div>
   </div>
 </footer>
 
@@ -590,13 +591,13 @@ const SLIDES = [
   { img:"slides/slide03.jpg" },
   { img:"slides/slide04.jpg" },
   { img:"slides/slide05.jpg" },
-  { img:"slides/slide06.jpg" },
-  { img:"slides/slide07.jpg" },
+  { img:"slides/slide06.jpg", video:"media/p06.mp4" },
+  { img:"slides/slide07.jpg", video:"media/p07.mp4" },
   { img:"slides/slide08.jpg" },
   { img:"slides/slide09.jpg" },
   { img:"slides/slide10.jpg" },
-  { img:"slides/slide11.jpg" },
-  { img:"slides/slide12.jpg" },
+  { img:"slides/slide11.jpg", video:"media/p11.mp4" },
+  { img:"slides/slide12.jpg", video:"media/p12.mp4" },
   { img:"slides/slide13.jpg" },
   { img:"slides/slide14.jpg" },
   { img:"slides/slide15.jpg" },
