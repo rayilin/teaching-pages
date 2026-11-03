@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8" />
@@ -506,7 +506,7 @@
   function renderWaiting() {
     app.innerHTML =
       '<div class="card waiting">' +
-        '<div class="radar"><span></span><span></span><b>🌱</b></div>' +
+        '<div class="radar"><span></span><span></span><b>👁️🦷</b></div>' +
         '<h1>等待另一位玩家…</h1>' +
         '<p class="sub">你以 <b>' + esc(state.myName) + '</b> 加入，配對成功會自動開始。</p>' +
         '<div class="waitline"><i></i></div>' +
@@ -728,7 +728,7 @@
     var title = tie ? '平手！' : (win ? '你贏了！' : '對手獲勝');
     var sub = tie ? '兩人都很厲害，再來一場分勝負。'
       : (win ? '反應快又答得對，太強了！' : '別灰心，下一場追回來。');
-    var icon = tie ? '🤝' : (win ? '🏆' : '🌱');
+    var icon = tie ? '🤝' : (win ? '🏆' : '🦷');
 
     app.innerHTML =
       '<div class="card result">' +
@@ -859,3 +859,4 @@
 </script>
 </body>
 </html>
+
