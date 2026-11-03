@@ -1,0 +1,65 @@
+name: 發佈教學網頁到 GitHub Pages
+
+# ════ 使用方式 ════
+# 1. 此檔放在 repo 的 .github/workflows/pages.yml
+# 2. 下方 UNIT_DIR 改成要發佈的單元網頁資料夾（含 index.html 的層）
+# 3. repo 需為公開（免費 Pages 限制），Settings → Pages → Build and deployment 來源選 GitHub Actions
+# 4. push main 就會自動發佈
+# 發佈時排除：server.js、questions.json（有答案！）、start-battle.bat 等後端檔
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "115-1_五上健體_視力口腔檢查站/教學網頁/**"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+env:
+  UNIT_DIR: "115-1_五上健體_視力口腔檢查站/教學網頁"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 檢出原始碼
+        uses: actions/checkout@v4
+
+      - name: 準備發佈檔案（排除後端程式與答案檔）
+        run: |
+          set -e
+          mkdir -p _site
+          cp -r "$UNIT_DIR/." _site/
+          rm -f _site/server.js _site/questions.json _site/start-battle.bat _site/package.json \
+                _site/battle-api.js.example _site/*.bat
+          touch _site/.nojekyll
+          echo "上傳內容："
+          ls -1 _site
+
+      - name: 設定 Pages
+        uses: actions/configure-pages@v5
+
+      - name: 上傳網站
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 發佈
+        id: deployment
+        uses: actions/deploy-pages@v4
