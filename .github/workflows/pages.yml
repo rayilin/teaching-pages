@@ -1,18 +1,14 @@
 name: 發佈教學網頁到 GitHub Pages
 
 # ════ 使用方式 ════
-# 1. 此檔放在 repo 的 .github/workflows/pages.yml
-# 2. 下方 UNIT_DIR 改成要發佈的單元網頁資料夾（含 index.html 的層）
-# 3. repo 需為公開（免費 Pages 限制），Settings → Pages → Build and deployment 來源選 GitHub Actions
-# 4. push main 就會自動發佈
-# 發佈時排除：server.js、questions.json（有答案！）、start-battle.bat 等後端檔
+# 1. 首頁 index.html（單元總覽）在 repo 根目錄，手動維護卡片
+# 2. 每個單元放 units/<英文代號>/（內容就是該單元的「教學網頁」資料夾）
+# 3. push main 就自動發佈：根目錄＝首頁，/units/<代號>/＝各單元
+# 4. 發佈時自動刪掉 server.js、questions.json（有答案！）、*.bat
 
 on:
   push:
     branches: [main]
-    paths:
-      - "115-1_五上健體_視力口腔檢查站/教學網頁/**"
-      - ".github/workflows/pages.yml"
   workflow_dispatch:
 
 permissions:
@@ -24,9 +20,6 @@ concurrency:
   group: pages
   cancel-in-progress: true
 
-env:
-  UNIT_DIR: "115-1_五上健體_視力口腔檢查站/教學網頁"
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -34,16 +27,17 @@ jobs:
       - name: 檢出原始碼
         uses: actions/checkout@v4
 
-      - name: 準備發佈檔案（排除後端程式與答案檔）
+      - name: 準備發佈檔案（整包，排除後端與答案檔）
         run: |
           set -e
           mkdir -p _site
-          cp -r "$UNIT_DIR/." _site/
-          rm -f _site/server.js _site/questions.json _site/start-battle.bat _site/package.json \
-                _site/battle-api.js.example _site/*.bat
+          cp -r units/. _site/
+          cp index.html _site/index.html
+          find _site -type f \( -name 'server.js' -o -name 'questions.json' \
+            -o -name '*.bat' -o -name 'battle-api.js.example' \) -delete
           touch _site/.nojekyll
-          echo "上傳內容："
-          ls -1 _site
+          echo "單元："
+          ls -1 _site/units
 
       - name: 設定 Pages
         uses: actions/configure-pages@v5

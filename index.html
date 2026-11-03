@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>教學專欄｜國小教學資源</title>
+    <style>
+      :root {
+        --ink: #22343c;
+        --sub: #5a6b73;
+        --muted: #8a857b;
+        --cream: #f7f5f0;
+        --paper: #ffffff;
+        --line: #e2dccf;
+        --green: #2a9d8f;
+        --blue: #3d7ea6;
+        --coral: #e4572e;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--cream);
+        color: var(--ink);
+        font-family: "GenSekiGothic2 TW M", "Microsoft JhengHei", "Noto Sans TC", system-ui, sans-serif;
+        line-height: 1.7;
+        -webkit-font-smoothing: antialiased;
+      }
+      h1, h2, h3 { line-height: 1.25; margin: 0; font-weight: 700; }
+      a { color: inherit; }
+      .wrap { width: min(1080px, 92vw); margin: 0 auto; }
+
+      header.hero { padding: 84px 0 56px; }
+      .kicker {
+        font-size: 14px; letter-spacing: 0.22em; color: var(--green);
+        font-weight: 700; margin-bottom: 14px;
+      }
+      .hero h1 { font-size: clamp(34px, 5vw, 52px); letter-spacing: -0.01em; }
+      .hero p {
+        margin: 16px 0 0; font-size: clamp(15px, 1.6vw, 18px);
+        color: var(--sub); max-width: 46em;
+      }
+      .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+      .tag {
+        font-size: 13px; padding: 5px 12px; border-radius: 999px;
+        background: #fff; border: 1px solid var(--line); color: var(--sub);
+      }
+
+      main { padding-bottom: 40px; }
+      .sec-title {
+        display: flex; align-items: baseline; gap: 12px; margin: 0 0 18px;
+      }
+      .sec-title h2 { font-size: 22px; }
+      .sec-title span { font-size: 13px; color: var(--muted); }
+
+      .grid { display: grid; gap: 22px; grid-template-columns: 1fr; }
+      @media (min-width: 780px) { .grid { grid-template-columns: 1fr 1fr; } }
+
+      .unit {
+        background: var(--paper); border: 1px solid var(--line);
+        border-radius: 20px; overflow: hidden;
+        display: flex; flex-direction: column;
+        transition: transform .18s ease, box-shadow .18s ease;
+      }
+      .unit:hover { transform: translateY(-3px); box-shadow: 0 14px 34px rgba(34, 52, 60, .10); }
+      .thumb { display: block; aspect-ratio: 16/9; background: #e9e3d6; overflow: hidden; }
+      .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+      .body { padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+      .meta { font-size: 13px; color: var(--green); font-weight: 700; letter-spacing: .04em; }
+      .body h3 { font-size: 24px; }
+      .body p { margin: 0; font-size: 14.5px; color: var(--sub); }
+      .facts { display: flex; flex-wrap: wrap; gap: 6px; }
+      .fact {
+        font-size: 12.5px; color: var(--sub); background: var(--cream);
+        border-radius: 8px; padding: 3px 9px;
+      }
+      .actions { margin-top: auto; display: flex; flex-wrap: wrap; gap: 8px; padding-top: 6px; }
+      .btn {
+        display: inline-block; text-decoration: none; font-size: 14px; font-weight: 700;
+        padding: 9px 16px; border-radius: 12px; border: 1px solid transparent;
+      }
+      .btn.primary { background: var(--ink); color: #fff; }
+      .btn.ghost { border-color: var(--line); color: var(--ink); background: #fff; }
+      .btn:hover { opacity: .9; }
+
+      .soon {
+        border: 2px dashed var(--line); border-radius: 20px;
+        display: flex; align-items: center; justify-content: center;
+        min-height: 260px; color: var(--muted); font-size: 14px;
+        text-align: center; padding: 24px;
+      }
+
+      footer {
+        border-top: 1px solid var(--line); padding: 26px 0 40px;
+        font-size: 13px; color: var(--muted);
+      }
+      footer b { color: var(--ink); }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="wrap">
+        <div class="kicker">TEACHING SITES</div>
+        <h1>教學專欄</h1>
+        <p>把每個單元做成可以直接上課的一整套：教案、教學簡報、旁白動畫、互動測驗、參考影片、抽籤計時器，以及兩人即時對戰。全部自製素材，老師打開就能投影。</p>
+        <div class="tags">
+          <span class="tag">教案 Word</span>
+          <span class="tag">簡報 16:9</span>
+          <span class="tag">旁白動畫</span>
+          <span class="tag">線上測驗</span>
+          <span class="tag">兩人對戰</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="wrap">
+        <div class="sec-title"><h2>單元列表</h2><span>依上線時間排序</span></div>
+        <div class="grid">
+          <article class="unit">
+            <a class="thumb" href="units/115-1-health-vision-oral/">
+              <img src="units/115-1-health-vision-oral/slides/slide01.jpg" alt="視力口腔檢查站簡報封面" loading="lazy" />
+            </a>
+            <div class="body">
+              <div class="meta">康軒版・健康與體育・五年級上學期・單元一第 2 課</div>
+              <h3><a href="units/115-1-health-vision-oral/" style="text-decoration:none">視力口腔檢查站</a></h3>
+              <p>從 3C 用眼習慣與牙齦流血的生活情境出發，建立護眼口訣 3010120 與牙周病四部曲，最後訂出可測量的健康改善計畫。</p>
+              <div class="facts">
+                <span class="fact">2 節課 80 分鐘</span>
+                <span class="fact">21 頁簡報</span>
+                <span class="fact">4 段旁白動畫</span>
+                <span class="fact">10 題測驗</span>
+                <span class="fact">30 題對戰</span>
+              </div>
+              <div class="actions">
+                <a class="btn primary" href="units/115-1-health-vision-oral/">進入教學網頁</a>
+                <a class="btn ghost" href="units/115-1-health-vision-oral/downloads/%E6%95%99%E6%A1%88_%E8%A6%96%E5%8A%9B%E5%8F%A3%E8%85%94%E6%AA%A2%E6%9F%A5%E7%AB%99.docx" download>下載教案</a>
+                <a class="btn ghost" href="units/115-1-health-vision-oral/downloads/%E8%A6%96%E5%8A%9B%E5%8F%A3%E8%85%94%E6%AA%A2%E6%9F%A5%E7%AB%99_%E6%95%99%E5%AD%B8%E7%B0%A1%E5%A0%B1.pptx" download>下載簡報</a>
+              </div>
+            </div>
+          </article>
+
+          <div class="soon">下一個單元製作中<br />（同一條產線：教案 → 簡報 → 動畫 → 網頁 → 測驗 → 對戰）</div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <b>教學專欄</b>｜自製教材・公開影片連結｜對戰後端需另行啟動，網頁內有教室用法說明
+      </div>
+    </footer>
+  </body>
+</html>
